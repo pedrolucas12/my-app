@@ -2,32 +2,338 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.home {
+    background-color: #fff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.container {
+    display: flex;
+    margin: 200px auto auto auto;
+    grid-template-columns: 1fr; /* Removi a definição de colunas para permitir o ajuste automático */
+    grid-template-rows: auto auto auto; /* Adicionei linhas automáticas para o layout responsivo */
+    text-align: left;
+    align-items: left;
+    width: 100%;
+}
+
+.topRow {
+    display: grid;
+    grid-template-columns: 1fr; /* Alterei para uma única coluna para empilhar o conteúdo verticalmente */
+}
+
+.textDiv {
+    margin: 0 0 20px 0;
+}
+
+.mainText {
+    font: 500 48px/60px Lexend; /* Aumentei um pouco o tamanho da fonte */
+    color: var(--title-alt);
+    text-align: right; /* Ajustei para alinhar à direita */
+    max-width: 750px;
+}
+
+.TextDestact {
+    font: 500 48px/60px Lexend; /* Aumentei um pouco o tamanho da fonte */
+    color: #0178A9;
+    text-align: right; /* Ajustei para alinhar à direita */
+    max-width: 750px;
+}
+
+.subText {
+    font: 300 20px/30px Lexend; /* Aumentei o tamanho da fonte */
+    margin: 20px 0; /* Reduzi a margem superior */
+    color: var(--brand-text);
+    max-width: 750px;
+    text-align: right; /* Ajustei para alinhar à direita */
+} 
+
+.buttons {
+    display: flex;
+    grid-template-columns: auto 1fr; /* Alterei para que o botão venha após a imagem */
+    max-width: 400px;
+    margin-top: 20px; /* Adicionei uma margem superior */
+    text-align: right; /* Ajustei para alinhar à direita */
+    align-items: center; /* Alinhei verticalmente com a imagem */
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--brand);
+    padding: 10px 20px;
+}
+
+.buttons img {
+    margin-left: 20px; /* Adicionei uma margem à esquerda para separar a imagem do botão */
+}
+
+
+.imageDiv {
+    display: grid;
+    justify-content: end; /* Ajustei para alinhar à direita */
+    align-content: center;
+    max-width: 50%; /* Defini um máximo de largura para a imagem */
+    margin-left: auto; /* Ajustei para ficar à direita dos textos */
+}
+
+
+/* CLIENTES SECTION ------------  */
+
+.clients {
+    display: flex;
+    flex-direction: row;
+    margin: 100px auto;
+}
+
+.clientText {
+    display: flex;
+    font: 500 30px/20px Lexend; /* Aumentei um pouco o tamanho da fonte */
+    color: var(--title-alt);
+    text-align: center; /* Ajustei para alinhar ao centro */
+    margin-bottom: 20px; /* Adicionei uma margem inferior */
+    flex-direction: row;
+}
+
+.TextDestact2 {
+    font: 500 32px/20px Lexend; /* Aumentei um pouco o tamanho da fonte */
+    color: #0178A9;
+    padding-left: 10px; /* Adicionei um espaçamento à esquerda */
+}
+
+.clientRow {
+    display: flex;
+    flex-wrap: wrap; /* Adicionei quebra de linha */
+    gap: 20px; /* Adicionei um espaçamento entre os logos */
+}
+
+
+
+/* COMPROMISSOS SECTION */
+
+.gridCompromissos {
+    display: flex;
+    grid-template-columns: 1fr 1fr; /* Alterei para duas colunas */
+    gap: 20px; /* Adicionei um espaçamento entre os elementos */
+    margin: 100px auto;
+    padding: 20px;
+}
+
+.cardsCompromissos {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 500px; 
+    height: 300px;
+}
+
+.imgCompromissos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0; /* Adicionei uma margem superior e inferior */
+    width: 130px;
+}
+
+.h2Compromissos {
+    font: 500 20px/20px Lexend; /* Aumentei um pouco o tamanho da fonte */
+    color: var(--title-alt);
+    margin: 8px; /* Adicionei uma margem inferior */
+}
+
+.pCompromissos {
+    font: 300 15px/30px Lexend; /* Aumentei o tamanho da fonte */
+    color: var(--brand-text);
+    margin: 8px; /* Adicionei uma margem inferior */
+}
+
+
+/* MOTIVOS SECTION ----------------- */
+
+.gridMotivos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  
+  .titleMotivos {
+    font-weight: bold; /* Texto do título negrito */
+    font-size: 36px; /* Tamanho grande */
+    text-align: center; /* Centralizado */
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
   }
-}
+  
+  .cardsMotivos {
+    background-color: #f7f7f7; /* Fundo mais claro */
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px; /* Bordas mais arredondadas */
+  }
+  
+  .h1Motivos {
+    font-weight: bold; /* Texto do h1 negrito */
+    font-size: 24px; /* Tamanho maior */
+  }
+  
+  .h2Motivos {
+    text-align: center; /* Textos centralizados */
+  }
+  
+
+  /* DEMO SECTION -----------------  */
+
+  .gridDemo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .buttonsDemo {
+    display: flex;
+    justify-content: space-between; /* Para colocar os botões lado a lado */
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os botões */
+  }
+  
+  .buttonDemo {
+    padding: 12px 24px; /* Um pouco maiores */
+    border: 2px solid blue; /* Bordas azuis */
+    border-radius: 20px; /* Bordas mais arredondadas */
+    color: blue; /* Fonte azul */
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 255, 0.1); /* Sombra azul */
+    width: 200px; /* Largura fixa */
+  }
+  
+  .buttonDemo.gradient {
+    background: linear-gradient(180deg, #0099ff 0%, #0066cc 100%); /* Degrade mais bonito */
+    color: white; /* Fonte branca */
+  }  
+  
+  .imgCompromissos {
+    margin-top: 20px;
+  }
+  
+  
+  /* SECTION SOLUCAO --------------- */
+
+  .gridSolucao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .titleSolucao {
+    font-size: 66px; /* Tamanho grande */
+    color: #555; /* Cinza */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .imgSolucao {
+    float: left;
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+  }
+  
+  .img2Solucao {
+    float: right;
+    margin-left: 20px; /* Espaço entre a imagem e o texto */
+    margin-bottom: 20px; /* Espaço abaixo da segunda imagem */
+  }
+  
+  .pCompromissos {
+    text-align: right; /* Alinhado à direita */
+    clear: right;
+  }
+
+
+  /* SECTION FALE CONOSCO ---------------  */
+
+  /* Estilos para a página Fale Conosco */
+
+/* Estilos para a página Fale Conosco */
+
+/* Estilos para a página Fale Conosco */
+
+.gridConosco {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    padding: 20px;
+  }
+  
+  .cardsConosco {
+    width: calc(70% - 20px); /* Metade da largura da tela, menos o espaçamento */
+    padding-right: 20px; /* Espaçamento entre o conteúdo e a imagem */
+  }
+  
+  .titleConosco {
+    font-size: 24px; /* Fonte grande */
+    color: #555; /* Cinza */
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+  }
+  
+  .subtitleConosco {
+    font-size: 18px; /* Fonte menor */
+    color: #555; /* Cinza */
+    margin-bottom: 10px; /* Espaçamento abaixo do subtítulo */
+  }
+  
+  .text1Conosco {
+    font-size: 16px; /* Fonte menor */
+    color: blue; /* Azul */
+    margin-bottom: 10px; /* Espaçamento abaixo do texto 1 */
+  }
+  
+  .input1,
+  .input2,
+  .input3,
+  .input4 {
+    width: calc(100% - 22px); /* Largura total menos a largura da borda */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento abaixo dos inputs */
+    border: 1px solid #ccc; /* Borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    color: #000; /* Cor do texto */
+  }
+  
+  .input2,
+  .input3 {
+    display: inline-block; /* Para ficarem na mesma linha */
+    width: calc(50% - 11px); /* Metade da largura total menos metade da largura da borda */
+    margin-right: 10px; /* Espaçamento entre os inputs */
+  }
+  
+  .input4 {
+    width: calc(100% - 22px); /* Largura total menos a largura da borda */
+  }
+  
+  .button {
+    background-color: blue; /* Fundo azul */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-top: 10px; /* Espaçamento acima do botão */
+  }
+  
+  .text2Conosco {
+    font-size: 16px; /* Fonte menor */
+    color: blue; /* Azul */
+    margin-top: 10px; /* Espaçamento acima do texto 2 */
+  }
+  
+  .imgConosco {
+    width: calc(20% - 20px); /* Metade da largura da tela, menos o espaçamento */
+    margin: auto; /* Alinha a imagem à direita */
+  }
+  
+  
+  
